@@ -1,5 +1,7 @@
 # Change cron between timezones
 
+[![Build Status](https://travis-ci.com/VidocqH/cron-timezone-convert.svg?branch=main)](https://travis-ci.com/VidocqH/cron-timezone-convert)
+
 Gives a crontab expression, source and target timezones, return a new crontab expression that times change according to the given timezones.
 
 ## Install
