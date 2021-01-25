@@ -23,6 +23,10 @@ class TestTransformer(unittest.TestCase):
     def test_slash_unchange(self):
         self.assertEqual(convert('* 0-4,2-5/15 * * *', 'Asia/Shanghai', 'UTC'), '* 16-21/15 * * *')
 
+    def test_normalize(self):
+        # I got the output: 50 16-17,0 * * *
+        self.assertEqual(convert('50 0,1,8 * * *', 'Asia/Shanghai', 'UTC'), '50 0,16-17 * * *')
+
     # TODO
     def test_gmt8_gmt_back_day(self):
         self.assertEqual(convert('* 0 2 * 2', 'Asia/Shanghai', 'UTC'), '* 16 1 * 1')

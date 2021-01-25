@@ -89,7 +89,7 @@ class crontztrans:
         '''
         for i in range(len(hoursAfterConvert)):
             hoursAfterConvert[i] = int(hoursAfterConvert[i]) % 24
-        return hoursAfterConvert
+        return sorted(hoursAfterConvert)
 
     def crontz_convert(self):
         self.split_cron()
@@ -114,9 +114,9 @@ class crontztrans:
         self.expression = ' '.join(self.expression)
         return self.expression
 
-# crontztrans('1 17 3 4 5', 'Asia/Shanghai', 'UTC').crontz_convert()
-
 def convert(expression, source_timezone, target_timezone):
     cron_class = crontztrans(expression, source_timezone, target_timezone)
     res = cron_class.crontz_convert()
     return res
+
+print(convert('50 0,1,8 * * *', 'Asia/Shanghai', 'UTC'))
