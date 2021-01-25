@@ -1,5 +1,10 @@
 # Change cron between timezones
 
+## Install
+```bash
+pip3 install crontzconvert
+```
+
 ## Usage
 
 ```python
