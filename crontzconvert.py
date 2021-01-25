@@ -115,8 +115,13 @@ class crontztrans:
         return self.expression
 
 def convert(expression, source_timezone, target_timezone):
+    '''
+    expression: crontab expression,
+    source_timezone: source timezone (from),
+    target_timezone: target timezone (to)
+    '''
     cron_class = crontztrans(expression, source_timezone, target_timezone)
     res = cron_class.crontz_convert()
     return res
 
-print(convert('50 0,1,8 * * *', 'Asia/Shanghai', 'UTC'))
+# print(convert('50 0,1,8 * * *', 'Asia/Shanghai', 'UTC'))
